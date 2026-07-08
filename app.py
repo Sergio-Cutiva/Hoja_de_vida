@@ -104,10 +104,8 @@ def generar_pdf():
     pdf.set_font('helvetica', 'B', 10)
     pdf.cell(55, 5, "Ingeniería Eléctrica:")
     pdf.set_font('helvetica', '', 10)
-    pdf.multi_cell(0, 5, "Simulación de generadores/motores, diseño de subestaciones, flujo de cargas, dimensionamiento fotovoltaico.")
+    pdf.multi_cell(0, 5, "Simulación de generadores/motores, diseño de subestaciones, flujo de cargas, dimensionamiento fotovoltaico. Software especializado: ATP, ETAP, AutoCAD.")
     pdf.ln(2)
-    
-    # Se eliminó la sección de idiomas
     
     return pdf.output()
 
@@ -156,4 +154,4 @@ st.write("**Diplomado en Instalaciones Fotovoltaicas** | GIPEM | 2023")
 
 st.header("Habilidades Técnicas")
 st.write("- **Software y Automatización:** Python, C++, MATLAB, Selenium, Pandas, XlsxWriter, win32com, PyInstaller, Git, GitHub.")
-st.write("- **Ingeniería Eléctrica:** Simulación de generadores/motores, diseño de subestaciones, flujo de cargas, dimensionamiento fotovoltaico.")
+st.write("- **Ingeniería Eléctrica:** Simulación de generadores/motores, diseño de subestaciones, flujo de cargas, dimensionamiento fotovoltaico. Software especializado: ATP, ETAP, AutoCAD.")
