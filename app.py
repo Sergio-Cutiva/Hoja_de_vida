@@ -18,26 +18,29 @@ RESUMEN = (
 class ResumePDF(FPDF):
     def section_title(self, title):
         self.set_font('helvetica', 'B', 12)
-        self.cell(0, 8, title.upper(), ln=True)
-        # Línea divisoria
-        self.line(self.get_x(), self.get_y(), self.get_x() + 190, self.get_y())
+        # ln=1 fuerza el salto de línea. w=0 ocupa el ancho disponible.
+        self.cell(0, 8, title.upper(), ln=1)
+        # Línea divisoria calculada dinámicamente según el ancho de la página
+        self.line(self.get_x(), self.get_y(), self.w - self.r_margin, self.get_y())
         self.ln(3)
 
     def job_entry(self, title, date, company, location, bullets):
         self.set_font('helvetica', 'B', 11)
         self.cell(130, 6, title)
         self.set_font('helvetica', '', 11)
-        self.cell(60, 6, date, ln=True, align='R')
+        # w=0 extiende la celda hasta el margen derecho, alineando el texto ahí y bajando (ln=1)
+        self.cell(0, 6, date, ln=1, align='R')
         
         self.set_font('helvetica', 'I', 11)
         self.cell(130, 6, company)
         self.set_font('helvetica', '', 11)
-        self.cell(60, 6, location, ln=True, align='R')
+        self.cell(0, 6, location, ln=1, align='R')
         self.ln(1)
         
         self.set_font('helvetica', '', 10)
         for bullet in bullets:
-            self.multi_cell(0, 5, chr(149) + " " + bullet)
+            # Se utiliza el guion estandarizado para evitar fallos de codificación
+            self.multi_cell(0, 5, "- " + bullet)
         self.ln(4)
 
 def generar_pdf():
@@ -47,10 +50,10 @@ def generar_pdf():
     
     # Encabezado
     pdf.set_font('helvetica', 'B', 16)
-    pdf.cell(0, 8, NOMBRE, ln=True, align='C')
+    pdf.cell(0, 8, NOMBRE, ln=1, align='C')
     pdf.set_font('helvetica', '', 10)
-    pdf.cell(0, 5, CONTACTO, ln=True, align='C')
-    pdf.cell(0, 5, LINKS, ln=True, align='C')
+    pdf.cell(0, 5, CONTACTO, ln=1, align='C')
+    pdf.cell(0, 5, LINKS, ln=1, align='C')
     pdf.ln(6)
     
     # Resumen
@@ -106,8 +109,8 @@ def generar_pdf():
 st.set_page_config(page_title="CV | Sergio Cutiva", page_icon="📄", layout="centered")
 
 st.title(NOMBRE)
-st.markdown(f"📍 **{CONTACTO}**")
-st.markdown(f"🔗 **{LINKS}**")
+st.markdown(f"📍 **Bogotá, Colombia** | 📱 **+57 3208481087** | ✉️ **sergiocutivam@gmail.com**")
+st.markdown(f"🔗 **[LinkedIn](https://www.linkedin.com/in/sergio-cutiva-212320382) | [GitHub](https://github.com/SergioCutiva)**")
 
 # Botón de descarga interactivo
 st.download_button(
