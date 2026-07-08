@@ -2,7 +2,6 @@ import streamlit as st
 from fpdf import FPDF
 
 # --- 1. DATOS CENTRALIZADOS ---
-# Modifica esta sección cuando necesites actualizar tu hoja de vida
 NOMBRE = "SERGIO AMHER CUTIVA MEDINA"
 CONTACTO = "Bogotá, Colombia | +57 3208481087 | sergiocutivam@gmail.com"
 LINKS = "linkedin.com/in/sergio-cutiva-212320382 | github.com/SergioCutiva"
@@ -18,28 +17,34 @@ RESUMEN = (
 class ResumePDF(FPDF):
     def section_title(self, title):
         self.set_font('helvetica', 'B', 12)
-        # ln=1 fuerza el salto de línea. w=0 ocupa el ancho disponible.
-        self.cell(0, 8, title.upper(), ln=1)
-        # Línea divisoria calculada dinámicamente según el ancho de la página
-        self.line(self.get_x(), self.get_y(), self.w - self.r_margin, self.get_y())
+        # Imprime la celda y luego fuerza el salto de línea de forma explícita
+        self.cell(0, 8, title.upper())
+        self.ln(8)
+        
+        # Línea divisoria calculada dinámicamente
+        self.line(self.l_margin, self.get_y(), self.w - self.r_margin, self.get_y())
         self.ln(3)
 
     def job_entry(self, title, date, company, location, bullets):
         self.set_font('helvetica', 'B', 11)
         self.cell(130, 6, title)
+        
         self.set_font('helvetica', '', 11)
-        # w=0 extiende la celda hasta el margen derecho, alineando el texto ahí y bajando (ln=1)
-        self.cell(0, 6, date, ln=1, align='R')
+        self.cell(0, 6, date, align='R')
+        self.ln(6) # Salto de línea explícito para reiniciar el cursor en X
         
         self.set_font('helvetica', 'I', 11)
         self.cell(130, 6, company)
+        
         self.set_font('helvetica', '', 11)
-        self.cell(0, 6, location, ln=1, align='R')
-        self.ln(1)
+        self.cell(0, 6, location, align='R')
+        self.ln(6) # Salto de línea explícito
+        self.ln(1) # Pequeño espacio vertical antes de los bullets
         
         self.set_font('helvetica', '', 10)
         for bullet in bullets:
-            # Se utiliza el guion estandarizado para evitar fallos de codificación
+            # Aseguramos que el cursor inicie estrictamente en el margen izquierdo
+            self.set_x(self.l_margin)
             self.multi_cell(0, 5, "- " + bullet)
         self.ln(4)
 
@@ -50,15 +55,20 @@ def generar_pdf():
     
     # Encabezado
     pdf.set_font('helvetica', 'B', 16)
-    pdf.cell(0, 8, NOMBRE, ln=1, align='C')
+    pdf.cell(0, 8, NOMBRE, align='C')
+    pdf.ln(8)
+    
     pdf.set_font('helvetica', '', 10)
-    pdf.cell(0, 5, CONTACTO, ln=1, align='C')
-    pdf.cell(0, 5, LINKS, ln=1, align='C')
-    pdf.ln(6)
+    pdf.cell(0, 5, CONTACTO, align='C')
+    pdf.ln(5)
+    
+    pdf.cell(0, 5, LINKS, align='C')
+    pdf.ln(10)
     
     # Resumen
     pdf.section_title("Resumen Profesional")
     pdf.set_font('helvetica', '', 10)
+    pdf.set_x(pdf.l_margin)
     pdf.multi_cell(0, 5, RESUMEN)
     pdf.ln(4)
     
@@ -85,17 +95,19 @@ def generar_pdf():
     pdf.job_entry("Curso de Inteligencia Artificial", "2025", "Ministerio TIC - Talento Tech", "", ["Desarrollo de ChatBots, análisis de datos y proyecto de predicción de casos de dengue en el Caquetá."])
     pdf.job_entry("Diplomado en Instalaciones Fotovoltaicas", "2023", "GIPEM - Grupo de investigación", "", ["Dimensionamiento, simulación de modelos teóricos y análisis de sistemas fotovoltaicos en zonas urbanas y rurales."])
     
-    # Habilidades
+    # Habilidades Técnicas
     pdf.section_title("Habilidades Técnicas")
     pdf.set_font('helvetica', 'B', 10)
     pdf.cell(55, 5, "Software y Automatización:")
     pdf.set_font('helvetica', '', 10)
     pdf.multi_cell(0, 5, "Python, C++, MATLAB, Selenium, Pandas, XlsxWriter, win32com, PyInstaller, Git, GitHub.")
+    pdf.ln(2)
     
     pdf.set_font('helvetica', 'B', 10)
     pdf.cell(55, 5, "Ingeniería Eléctrica:")
     pdf.set_font('helvetica', '', 10)
     pdf.multi_cell(0, 5, "Simulación de generadores/motores, diseño de subestaciones, líneas de transmisión, dimensionamiento fotovoltaico.")
+    pdf.ln(2)
     
     pdf.set_font('helvetica', 'B', 10)
     pdf.cell(55, 5, "Idiomas:")
