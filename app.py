@@ -7,11 +7,11 @@ CONTACTO = "Bogotá, Colombia | +57 3208481087 | sergiocutivam@gmail.com"
 LINKS = "linkedin.com/in/sergio-cutiva-212320382 | github.com/SergioCutiva"
 
 RESUMEN = (
-    "Candidato a Ingeniero Electricista y Analista de Automatización con experiencia en el desarrollo de "
-    "software (Python), integración de sistemas e ingeniería de potencia. Capacidad comprobada para diseñar "
-    "herramientas de automatización de procesos corporativos, análisis de datos, extracción de información y "
-    "manejo de reportes estructurados. Enfoque orientado a la resolución de problemas técnicos complejos y a la "
-    "optimización de la eficiencia operativa mediante soluciones tecnológicas a medida."
+    "Candidato a Ingeniero Electricista enfocado en la ingeniería de datos, automatización de procesos "
+    "y el desarrollo de soluciones tecnológicas corporativas. Experiencia comprobada en el despliegue de "
+    "aplicativos web (dashboards), aplicación de inteligencia artificial para extracción de información y el "
+    "cruce masivo de bases de datos. Habilidad integral combinando desarrollo de software (Python) con "
+    "supervisión operativa en terreno y gestión de activos en el sector energético."
 )
 
 # --- 2. CLASE PARA GENERAR EL PDF (FORMATO HARVARD) ---
@@ -72,16 +72,16 @@ def generar_pdf():
     # Experiencia
     pdf.section_title("Experiencia Profesional")
     bullets_enel = [
-        "Desarrollo de 'Telecontrol Inspection Tool', un sistema en Python para la extracción automatizada de datos e imágenes desde correos de Outlook y su consolidación en reportes de Excel mediante XlsxWriter.",
-        "Ingeniería de herramientas de automatización con Pandas y win32com para la detección de cambios de estado en proyectos (PMS) y distribución automática de notificaciones a las partes interesadas.",
-        "Automatización de la navegación y descarga masiva de reportes en plataformas CRM (Salesforce Lightning) mediante Selenium, optimizando la consolidación de la Matriz de Equipos HSEQ y expiración de equipos Magnex.",
-        "Desarrollo de un consolidador de múltiples archivos Excel (.xls y .xlsx) con lógica personalizada para la corrección automática de estructuras XML heredadas y corruptas.",
-        "Empaquetado de soluciones de automatización en aplicaciones ejecutables independientes (standalone) utilizando PyInstaller, diseñando interfaces limpias e integrando la identidad visual corporativa."
+        "Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como PMS y Salesforce.",
+        "Desarrollo de aplicativos web y dashboards (Streamlit) para el análisis de información y la gestión logística en tiempo real de la flota vehicular, integrando notificaciones automáticas.",
+        "Experiencia operativa en terreno realizando interventoría, inspección de redes de media tensión y validación financiera de presupuestos, actas de obra y cobros de firmas contratistas (Magnex, Deltec).",
+        "Implementación de algoritmos analíticos para la extracción estructurada de datos técnicos (texto e imágenes) desde correos de telecontrol, facilitando la auditoría y toma de decisiones gerenciales.",
+        "Desarrollo y empaquetado de automatizaciones independientes (PyInstaller) orientadas a la optimización del control de activos y seguimiento de mantenimientos programados."
     ]
-    pdf.job_entry("Analista de Automatización / Pasante de Ingeniería", "Ene 2026 - Jul 2026", "Enel Colombia", "Bogotá, Colombia", bullets_enel)
+    pdf.job_entry("Analista de Datos y Automatización / Pasante Mantenimiento Programado", "Ene 2026 - Jul 2026", "Enel Colombia", "Bogotá, Colombia", bullets_enel)
     
     bullets_unal = [
-        "Monitor Académico de las asignaturas de Circuitos Eléctricos y Dispositivos, instruyendo a estudiantes en el uso de software de simulación y lenguajes de programación (C++, Python, MATLAB) para la resolución de problemas.",
+        "Monitor Académico de las asignaturas de Circuitos Eléctricos y Dispositivos, instruyendo a estudiantes en el uso de software de simulación y lenguajes de programación (C++, Python, MATLAB).",
         "Miembro activo del Grupo de Investigación en Recursos Energéticos (GIRE) y GIPEM, ejecutando estudios técnicos enfocados en energías renovables y optimización energética.",
         "Ponente seleccionado en la Red Regional de Semilleros de Investigación (RREDSI) 2022, exponiendo modelos computacionales de análisis eléctrico."
     ]
@@ -130,19 +130,19 @@ st.write(RESUMEN)
 
 st.header("Experiencia Profesional")
 st.subheader("Enel Colombia | Bogotá, Colombia")
-st.markdown("*Analista de Automatización / Pasante de Ingeniería* | Ene 2026 – Jul 2026")
+st.markdown("*Analista de Datos y Automatización / Pasante Mantenimiento Programado* | Ene 2026 – Jul 2026")
 st.markdown("""
-- Desarrollo de 'Telecontrol Inspection Tool', un sistema en Python para la extracción automatizada de datos e imágenes desde correos de Outlook y su consolidación en reportes de Excel mediante XlsxWriter.
-- Ingeniería de herramientas de automatización con Pandas y win32com para la detección de cambios de estado en proyectos (PMS) y distribución automática de notificaciones a las partes interesadas.
-- Automatización de la navegación y descarga masiva de reportes en plataformas CRM (Salesforce Lightning) mediante Selenium, optimizando la consolidación de la Matriz de Equipos HSEQ y expiración de equipos Magnex.
-- Desarrollo de un consolidador de múltiples archivos Excel (.xls y .xlsx) con lógica personalizada para la corrección automática de estructuras XML heredadas y corruptas.
-- Empaquetado de soluciones de automatización en aplicaciones ejecutables independientes (standalone) utilizando PyInstaller, diseñando interfaces limpias e integrando la identidad visual corporativa.
+- Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como PMS y Salesforce.
+- Desarrollo de aplicativos web y dashboards (Streamlit) para el análisis de información y la gestión logística en tiempo real de la flota vehicular, integrando notificaciones automáticas.
+- Experiencia operativa en terreno realizando interventoría, inspección de redes de media tensión y validación financiera de presupuestos, actas de obra y cobros de firmas contratistas (Magnex, Deltec).
+- Implementación de algoritmos analíticos para la extracción estructurada de datos técnicos (texto e imágenes) desde correos de telecontrol, facilitando la auditoría y toma de decisiones gerenciales.
+- Desarrollo y empaquetado de automatizaciones independientes (PyInstaller) orientadas a la optimización del control de activos y seguimiento de mantenimientos programados.
 """)
 
 st.subheader("Universidad Nacional de Colombia | Manizales, Colombia")
 st.markdown("*Investigador y Monitor Académico* | 2021 – 2025")
 st.markdown("""
-- Monitor Académico de las asignaturas de Circuitos Eléctricos y Dispositivos, instruyendo a estudiantes en el uso de software de simulación y lenguajes de programación (C++, Python, MATLAB) para la resolución de problemas.
+- Monitor Académico de las asignaturas de Circuitos Eléctricos y Dispositivos, instruyendo a estudiantes en el uso de software de simulación y lenguajes de programación (C++, Python, MATLAB).
 - Miembro activo del Grupo de Investigación en Recursos Energéticos (GIRE) y GIPEM, ejecutando estudios técnicos enfocados en energías renovables y optimización energética.
 - Ponente seleccionado en la Red Regional de Semilleros de Investigación (RREDSI) 2022, exponiendo modelos computacionales de análisis eléctrico.
 """)
