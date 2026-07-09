@@ -72,7 +72,7 @@ def generar_pdf():
     # Experiencia
     pdf.section_title("Experiencia Profesional")
     bullets_enel = [
-        "Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como PMS y Salesforce.",
+        "Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como STWeb, PMS y Salesforce.",
         "Desarrollo de aplicativos web y dashboards (Streamlit) para el análisis de información y la gestión logística en tiempo real de la flota vehicular, integrando notificaciones automáticas.",
         "Experiencia operativa en terreno realizando interventoría, inspección de redes de media tensión y validación financiera de presupuestos, actas de obra y cobros de firmas contratistas (Magnex, Deltec).",
         "Implementación de algoritmos analíticos para la extracción estructurada de datos técnicos (texto e imágenes) desde correos de telecontrol, facilitando la auditoría y toma de decisiones gerenciales.",
