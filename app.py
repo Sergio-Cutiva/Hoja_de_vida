@@ -7,11 +7,12 @@ CONTACTO = "Bogotá, Colombia | +57 3208481087 | sergiocutivam@gmail.com"
 LINKS = "linkedin.com/in/sergio-cutiva-212320382 | github.com/SergioCutiva"
 
 RESUMEN = (
-    "Candidato a Ingeniero Electricista enfocado en la ingeniería de datos, automatización de procesos "
-    "y el desarrollo de soluciones tecnológicas corporativas. Experiencia comprobada en el despliegue de "
-    "aplicativos web (dashboards), aplicación de inteligencia artificial para extracción de información y el "
-    "cruce masivo de bases de datos. Habilidad integral combinando desarrollo de software (Python) con "
-    "supervisión operativa en terreno y gestión de activos en el sector energético."
+    "Ingeniero Electricista especializado en integrar la infraestructura física de los sistemas de potencia "
+    "con la transformación digital del sector energético. Perfil profesional híbrido que combina una sólida "
+    "base técnica en operación, simulación y mantenimiento de redes eléctricas, con habilidades avanzadas en "
+    "ingeniería de datos, automatización y desarrollo de software (Python). Enfoque orientado a optimizar la "
+    "gestión de activos, ejercer interventoría técnica en terreno y agilizar la toma de decisiones gerenciales "
+    "mediante soluciones tecnológicas a medida."
 )
 
 # --- 2. CLASE PARA GENERAR EL PDF (FORMATO HARVARD) ---
@@ -72,13 +73,13 @@ def generar_pdf():
     # Experiencia
     pdf.section_title("Experiencia Profesional")
     bullets_enel = [
-        "Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como STWeb, PMS y Salesforce.",
+        "Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como ST Web, PMS y Salesforce.",
         "Desarrollo de aplicativos web y dashboards (Streamlit) para el análisis de información y la gestión logística en tiempo real de la flota vehicular, integrando notificaciones automáticas.",
         "Experiencia operativa en terreno realizando interventoría, inspección de redes de media tensión y validación financiera de presupuestos, actas de obra y cobros de firmas contratistas (Magnex, Deltec).",
         "Implementación de algoritmos analíticos para la extracción estructurada de datos técnicos (texto e imágenes) desde correos de telecontrol, facilitando la auditoría y toma de decisiones gerenciales.",
         "Desarrollo y empaquetado de automatizaciones independientes (PyInstaller) orientadas a la optimización del control de activos y seguimiento de mantenimientos programados."
     ]
-    pdf.job_entry("Analista de Datos y Automatización / Pasante Mantenimiento Programado", "Ene 2026 - Jul 2026", "Enel Colombia", "Bogotá, Colombia", bullets_enel)
+    pdf.job_entry("Analista de Datos y Automatización / Mantenimiento Programado", "Ene 2026 - Jul 2026", "Enel Colombia", "Bogotá, Colombia", bullets_enel)
     
     bullets_unal = [
         "Monitor Académico de las asignaturas de Circuitos Eléctricos y Dispositivos, instruyendo a estudiantes en el uso de software de simulación y lenguajes de programación (C++, Python, MATLAB).",
@@ -130,9 +131,9 @@ st.write(RESUMEN)
 
 st.header("Experiencia Profesional")
 st.subheader("Enel Colombia | Bogotá, Colombia")
-st.markdown("*Analista de Datos y Automatización / Pasante Mantenimiento Programado* | Ene 2026 – Jul 2026")
+st.markdown("*Analista de Datos y Automatización / Mantenimiento Programado* | Ene 2026 – Jul 2026")
 st.markdown("""
-- Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como PMS y Salesforce.
+- Ingeniería de datos (Python, Pandas) para la limpieza y cruce masivo de bases de datos operativas, integrando extracción automatizada (Selenium) desde sistemas como ST Web, PMS y Salesforce.
 - Desarrollo de aplicativos web y dashboards (Streamlit) para el análisis de información y la gestión logística en tiempo real de la flota vehicular, integrando notificaciones automáticas.
 - Experiencia operativa en terreno realizando interventoría, inspección de redes de media tensión y validación financiera de presupuestos, actas de obra y cobros de firmas contratistas (Magnex, Deltec).
 - Implementación de algoritmos analíticos para la extracción estructurada de datos técnicos (texto e imágenes) desde correos de telecontrol, facilitando la auditoría y toma de decisiones gerenciales.
