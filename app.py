@@ -90,7 +90,7 @@ def generar_pdf():
     
     # Educación
     pdf.section_title("Educación")
-    pdf.job_entry("Pregrado en Ingeniería Eléctrica", "Graduación esperada: Ago 2026", "Universidad Nacional de Colombia", "", [])
+    pdf.job_entry("Pregrado en Ingeniería Eléctrica", "Sep 2026", "Universidad Nacional de Colombia", "", [])
     pdf.job_entry("Curso de Inteligencia Artificial", "2025", "Ministerio TIC - Talento Tech", "", ["Desarrollo de ChatBots, análisis de datos y proyectos de predicción analítica."])
     pdf.job_entry("Diplomado en Instalaciones Fotovoltaicas", "2023", "GIPEM - Grupo de investigación", "", ["Dimensionamiento, simulación de modelos teóricos y análisis de sistemas fotovoltaicos en zonas urbanas y rurales."])
     
@@ -149,7 +149,7 @@ st.markdown("""
 """)
 
 st.header("Educación")
-st.write("**Pregrado en Ingeniería Eléctrica** | Universidad Nacional de Colombia | Graduación esperada: Ago 2026")
+st.write("**Pregrado en Ingeniería Eléctrica** | Universidad Nacional de Colombia | Sep 2026")
 st.write("**Curso de Inteligencia Artificial** | Ministerio TIC - Talento Tech | 2025")
 st.write("**Diplomado en Instalaciones Fotovoltaicas** | GIPEM | 2023")
 
